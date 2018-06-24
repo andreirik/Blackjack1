@@ -222,6 +222,7 @@ def main(play_round,total = 100):
     print("\nPlayer's winnings stand at " + str(player.total)) 
     play_round += 1
     total = player.total
-    replay(play_round,player.total)      
-               
-main(play_round)
+    replay(play_round,player.total)  
+    
+if __name__ == "__main__":
+    game(play_round)
