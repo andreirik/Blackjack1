@@ -21,7 +21,7 @@ class Card:
             return '%s of %s: value %s' % (self.rank, self.suit, values[self.rank])
 
 
-class Deck():
+class Deck:
 
     def __init__(self):
         self.deck = []
@@ -40,3 +40,33 @@ class Deck():
 
     def deal(self):
         return self.deck.pop()
+    
+    
+class Participant:
+    
+    def __init__(self,total = 100):         
+        self.total = total
+        self.cards = []
+        self.value = 0  
+        self.aces = 0         
+        self.bet = 0
+    
+    def add_card(self, card, values):
+        self.cards.append(card)        
+        self.value += values[card.rank]
+        if card.rank == 'Ace':
+            self.aces += 1  
+            
+    def adjust_for_ace(self):
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
+    
+    def win_bet(self):
+        self.total += self.bet
+    
+    def lose_bet(self):
+        self.total -= self.bet
+
+
+
