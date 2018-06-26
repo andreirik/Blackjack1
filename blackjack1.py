@@ -152,7 +152,7 @@ def replay(play_round,total):
 
         if wantagain == 'Y':
             print('')
-            main(play_round,total)
+            game(play_round,total)
             break
         elif wantagain == 'N':
             print('Goodbye. It was a pleasure to play with you!')
@@ -161,7 +161,7 @@ def replay(play_round,total):
             print('Please input a valid value')
             
 
-def main(play_round,total = 100):       
+def game(play_round,total = 100):       
     print('Welcome to Black Jack!')   
     deck = Deck()
     deck.shuffle()     
